@@ -3,7 +3,7 @@ import { HashLink } from "react-router-hash-link";
 
 export const NavBar: React.FC = () => {
   return (
-    <div className="h-20 bg-white drop-shadow-xl sticky top-0 flex justify-evenly content-center">
+    <div className="h-20 bg-white drop-shadow-xl sticky top-0 flex justify-evenly items-center">
       {/* ITEM 1 & 2: LOGO & TITLE */}
       <HashLink to="#top" className="text-3xl font-bold flex">
         <img
@@ -31,7 +31,7 @@ export const NavBar: React.FC = () => {
 
       {/* ITEM 3: RESUME IN NEW TAB */}
       <div className="text-xl text-white">
-        <a href="" className="bg-black px-10 py-3 flex content-center">Resume</a>
+        <a href="" className="bg-black px-10 py-3 flex items-center">Resume</a>
       </div>
     </div>
   );
