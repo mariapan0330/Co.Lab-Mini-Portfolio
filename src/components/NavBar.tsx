@@ -31,7 +31,7 @@ export const NavBar: React.FC = () => {
 
       {/* ITEM 3: RESUME IN NEW TAB */}
       <div className="text-xl text-white">
-        <a href="" className="bg-black px-10 py-3 flex items-center">Resume</a>
+        <a target='_blank' rel='noreferrer' href={require("../assets/Maria Panagos Resume for CoLab.pdf")} className="bg-black px-10 py-3 flex items-center jutify-center font-bold">Resume</a>
       </div>
     </div>
   );
