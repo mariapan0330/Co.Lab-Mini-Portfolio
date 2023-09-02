@@ -1,10 +1,15 @@
 import React from 'react';
+import { NavBar } from './components/NavBar'
+import { Landing } from './components/Landing'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <div className='text-9xl'>testing</div>
+    <div className="App bg-cover">
+      <NavBar />
+      <Landing />
+      <Landing />
+      <Landing />
     </div>
   );
 }
