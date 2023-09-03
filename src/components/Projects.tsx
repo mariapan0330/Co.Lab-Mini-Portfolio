@@ -64,7 +64,7 @@ export const Projects: React.FC = () => {
     },
   ];
   return (
-    <div className="h-content pb-40 mx-80">
+    <div className="h-content pb-40 mx-2 md:mx-80">
       <div className="text-5xl font-bold md:text-7xl">Projects</div>
       <div className="md:flex md:flex-wrap justify-center mt-20">
         {cards.map((card, i) => (
@@ -80,10 +80,11 @@ export const Projects: React.FC = () => {
 const ProjectCard: React.FC<ProjectCardProps> = ({ card }) => {
   let colors = ["#FFB2E0", "#72CDAA", "#4959FE", "#61BDFD", "#FECC38"];
   return (
-    <div className="bg-white p-4 m-4 w-80 shadow-md">
-      <div className="text-xl font-bold py-4">{card.title}</div>
-      <div className="text-md">{card.description}</div>
-      <div className="links my-6 font-bold">
+    <div className="flex flex-col bg-white p-4 m-4 w-80 min-h-[470px] max-h-full shadow-md ">
+        <img src={require(`../assets/projects/${card.image}.png`)} alt={card.title} />
+      <div className="flex-none text-xl font-bold py-4">{card.title}</div>
+      <div className="flex-row grow text-md">{card.description}</div>
+      <div className="flex-none links my-6 font-bold">
         {card.live && (
           <a
             href={card.live}

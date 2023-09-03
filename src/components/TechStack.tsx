@@ -37,7 +37,7 @@ export const TechStack: React.FC = () => {
             <img
               key={`stack-${i}`}
               src={require(`../assets/tech stack/${item.name.toLowerCase()}.png`)}
-              className={`h-20 p-3 md:h-36 md:p-6 rounded-lg duration-200 hover:bg-white hover:shadow-xl`}
+              className={`h-12 p-1 md:h-36 md:p-6 rounded-lg duration-200 hover:bg-white hover:shadow-xl`}
               alt={item.name}
             />
           ))}

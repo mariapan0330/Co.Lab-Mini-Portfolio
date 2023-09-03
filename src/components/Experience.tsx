@@ -144,20 +144,20 @@ const XPCard: React.FC<XPCardProps> = ({ item }) => {
   return (
     <div>
       <div
-        className={`p-10 m-4 shadow-lg rounded-xl ${
+        className={`p-2 md:p-10 mx-10 my-3 md:m-4 shadow-lg rounded-md md:rounded-xl ${
           showDescription && "mx-[300px]"
         } cursor-pointer`}
         style={{ backgroundColor: `#${item.color}` }}
         onClick={() => setShowDescription((prev) => !prev)}
       >
-        <div className="text-2xl font-bold">{item.role}</div>
-        <hr className="my-2 border-rose-300" />
-        <div className="text-xl">{item.company}</div>
-        <div className="text-rose-800 italic">{item.dates}</div>
-        <div className={`text-left ${showDescription ? "flex" : "hidden"}`}>
+        <div className="text-xl md:text-2xl font-bold">{item.role}</div>
+        <hr className="md:my-2 border-rose-300" />
+        <div className="text-lg md:text-xl">{item.company}</div>
+        <div className="text-sm md:text-lg text-rose-800 italic">{item.dates}</div>
+        <div className={`text-xs md:text-md text-left py-2 ${showDescription ? "flex" : "hidden"}`}>
           {item.description}
         </div>
-        <div className=" text-md text-rose-800/50 py-2 flex items-center justify-center italic">
+        <div className="text-sm md:text-md text-rose-800/50 md:py-2 flex items-center justify-center italic">
           {showDescription ? "Read less..." : "Read more..."}
         </div>
       </div>

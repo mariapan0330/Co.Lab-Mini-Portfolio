@@ -18,16 +18,16 @@ export const NavBar: React.FC = () => {
   ];
 
   return (
-    <div className="h-20 bg-white drop-shadow-xl sticky top-0 z-50 px-0 md:px-3 lg:px-40">
+    <div className="max-w-screen h-16 md:h-20 bg-white drop-shadow-xl sticky top-0 z-50 px-0 md:px-3 lg:px-40">
       <div className="flex">
         {/* ITEM 1 & 2: LOGO & TITLE */}
         <HashLink
           to="#top"
-          className="text-3xl font-bold flex items-center w-full py-4 md:pb-2 md:pt-0"
+          className="text-xl md:text-3xl font-bold flex items-center w-full py-4 md:pb-2 md:pt-0"
         >
           <img
             src={require("../assets/m icon.png")}
-            className="h-10 px-3"
+            className="h-6 md:h-10 px-2"
             alt="logo"
           />
           <div>Maria Panagos</div>
@@ -36,9 +36,9 @@ export const NavBar: React.FC = () => {
         {/* SMALL SCREENS: menu button */}
         {isPhone && <div
           onClick={() => setOpen((prev) => !prev)}
-          className="text-3xl absolute right-8 top-5 md:hidden"
+          className="absolute right-8 top-5 md:hidden"
         >
-          <img src={require("../assets/Menu Btn.png")} className="w-8" alt="" />
+          <img src={require("../assets/Menu Btn.png")} className="w-6" alt="" />
         </div>}
 
         {/* ITEMS 3,4,5: Bio, Projects, Riddle */}
