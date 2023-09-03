@@ -25,17 +25,15 @@ export const Experience: React.FC = () => {
           aged 7 to 15 to code in Scratch, Python, and JavaScript, and fostered
           curiosity and logical reasoning in both one-on-one and group settings.
           <br />
-          <br />
           - Curated a collection of resources to streamline the setup process,
           particularly via online IDEs like Replit and CodePen.
-          <br />
           <br />
           - Leveraged playful logic-practicing sites like CodeWars and
           CodeCombat, and visual libraries like Python’s Pygame and JavaScript’s
           colors module so students can engage with the fun and logic of coding
           without too much overhead.
           <br />
-          <br />- Earned Employee Spotlight of the Month for April 2023 in
+          - Earned Employee Spotlight of the Month for April 2023 in
           recognition of my diligence, rapport, and effective teaching.
         </>
       ),
@@ -50,11 +48,10 @@ export const Experience: React.FC = () => {
           - Established an Etsy shop with coherent branding and consistent,
           high-quality products achieved by implementing market research.
           <br />
-          <br />
           - Modified products and sales in advance of holidays and popular
           culture events to prepare for changes in consumer interests.
           <br />
-          <br />- Resolved questions and concerns and handled commissions to
+          - Resolved questions and concerns and handled commissions to
           achieve a seamless, friendly customer experience.
         </>
       ),
@@ -70,13 +67,12 @@ export const Experience: React.FC = () => {
           save user data in a PostgreSQL database and created Flask API
           endpoints which allowed authenticated users to access this data.
           <br />
-          <br />
           - Handled the retrieved data with React and Node.js to create an
           intuitive UI that ensured a seamless experience for users creating a
           new profile, viewing other users’ profiles and creating, editing, and
           deleting their own posts.
           <br />
-          <br />- Crafted and hosted a weather application, connecting a public
+          - Crafted and hosted a weather application, connecting a public
           weather API and using Flask’s Jinja Templating to achieve an elegant
           UI with effective search functionality. Hosted this project on Heroku
           and later migrated it to Netlify.
@@ -93,11 +89,10 @@ export const Experience: React.FC = () => {
           - Developed a distinct branding for the society recognizable across
           social media platforms, a community blog, and physical posters.
           <br />
-          <br />
           - Streamlined the recruitment of over 300 members, promoted 3 large
           events a week, and emailed members weekly.
           <br />
-          <br />- Managed a team working across 7 time zones dedicated to the
+          - Managed a team working across 7 time zones dedicated to the
           production of the society’s magazine.
         </>
       ),
@@ -111,12 +106,11 @@ export const Experience: React.FC = () => {
         <>
           - Graduated with second class honors, first division.
           <br />
-          <br />
           - Gained experience in data analysis using Python's NumPy, Pandas, and
           Matplotlib, as well as IBM's SPSS, analyzing large data sets as a part
           of various research projects.
           <br />
-          <br />- Developed soft skills including effective written and verbal
+          - Developed soft skills including effective written and verbal
           communication, critical thinking, and networking.
         </>
       ),
@@ -126,7 +120,7 @@ export const Experience: React.FC = () => {
   return (
     // this is all part of the bio section
     <div className="h-content md:mx-20 lg:mx-80 pb-40 " id="experience">
-      <div className="text-5xl font-bold md:text-7xl">
+      <div className="text-3xl font-bold md:text-5xl">
         Education & Experience
       </div>
       <div className="pt-8 md:pt-12 flex flex-col md:flex-row md:flex-wrap justify-evenly">
@@ -154,7 +148,7 @@ const XPCard: React.FC<XPCardProps> = ({ item }) => {
         <hr className="md:my-2 border-rose-300" />
         <div className="text-lg md:text-xl">{item.company}</div>
         <div className="text-sm md:text-lg text-rose-800 italic">{item.dates}</div>
-        <div className={`text-xs md:text-md text-left py-2 ${showDescription ? "flex" : "hidden"}`}>
+        <div className={`text-xs md:text-lg leading-5 text-left py-2 ${showDescription ? "flex" : "hidden"}`}>
           {item.description}
         </div>
         <div className="text-sm md:text-md text-rose-800/50 md:py-2 flex items-center justify-center italic">

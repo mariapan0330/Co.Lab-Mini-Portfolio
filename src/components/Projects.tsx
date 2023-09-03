@@ -65,7 +65,7 @@ export const Projects: React.FC = () => {
   ];
   return (
     <div className="h-content pb-40 mx-2 md:mx-80">
-      <div className="text-5xl font-bold md:text-7xl">Projects</div>
+      <div className="text-3xl font-bold md:text-5xl">Projects</div>
       <div className="md:flex md:flex-wrap justify-center mt-20">
         {cards.map((card, i) => (
           <div key={`project-card-${i}`}>
