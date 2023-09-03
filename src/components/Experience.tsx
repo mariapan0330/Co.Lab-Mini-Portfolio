@@ -125,7 +125,7 @@ export const Experience: React.FC = () => {
 
   return (
     // this is all part of the bio section
-    <div className="h-content md:mx-20 lg:mx-80 pb-20 " id="experience">
+    <div className="h-content md:mx-20 lg:mx-80 pb-40 " id="experience">
       <div className="text-5xl font-bold md:text-7xl">
         Education & Experience
       </div>
@@ -134,6 +134,7 @@ export const Experience: React.FC = () => {
           <XPCard item={item} />
         ))}
       </div>
+      <div id="projects" />
     </div>
   );
 };
@@ -157,7 +158,7 @@ const XPCard: React.FC<XPCardProps> = ({ item }) => {
           {item.description}
         </div>
         <div className=" text-md text-rose-800/50 py-2 flex items-center justify-center italic">
-          {showDescription ? 'Read less...' : 'Read more...'}
+          {showDescription ? "Read less..." : "Read more..."}
         </div>
       </div>
     </div>

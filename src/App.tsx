@@ -5,6 +5,7 @@ import { Landing } from './components/Landing'
 import { TechStack } from './components/TechStack';
 import { Experience } from './components/Experience';
 import { Footer } from './components/Footer';
+import { Projects } from './components/Projects';
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
       <Landing />
       <TechStack />
       <Experience />
+      <Projects />
     </div>
     <div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
     </>
   );
