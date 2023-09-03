@@ -67,7 +67,7 @@ export const NavBar: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               href={require("../assets/Maria Panagos Resume for CoLab.pdf")}
-              className="bg-black px-10 py-3 flex items-center justify-center font-bold"
+              className="bg-black hover:bg-gray-500 duration-200 px-10 py-3 flex items-center justify-center font-bold"
             >
               Resume
             </a>

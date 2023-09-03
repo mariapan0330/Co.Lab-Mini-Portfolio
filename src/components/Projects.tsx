@@ -67,8 +67,10 @@ export const Projects: React.FC = () => {
     <div className="h-content pb-40 mx-80">
       <div className="text-5xl font-bold md:text-7xl">Projects</div>
       <div className="md:flex md:flex-wrap justify-center mt-20">
-        {cards.map((card) => (
-          <ProjectCard card={card} />
+        {cards.map((card, i) => (
+          <div key={`project-card-${i}`}>
+            <ProjectCard card={card} />
+          </div>
         ))}
       </div>
     </div>
@@ -76,14 +78,39 @@ export const Projects: React.FC = () => {
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ card }) => {
+  let colors = ["#FFB2E0", "#72CDAA", "#4959FE", "#61BDFD", "#FECC38"];
   return (
     <div className="bg-white p-4 m-4 w-80 shadow-md">
       <div className="text-xl font-bold py-4">{card.title}</div>
       <div className="text-md">{card.description}</div>
-      <div className="links my-6">
-        {card.live && <a href={card.live} target="_blank" rel='noreferrer' className="bg-black text-white py-2 px-4 hover:bg-gray-500 duration-200">Live</a>}
+      <div className="links my-6 font-bold">
+        {card.live && (
+          <a
+            href={card.live}
+            target="_blank"
+            rel="noreferrer"
+            className="text-white py-2 px-4 border-solid border-4 rounded-sm border-white hover:border-blue-800"
+            style={{
+              backgroundColor: `${colors[Math.floor(Math.random() * 5)]}`,
+            }}
+          >
+            Live
+          </a>
+        )}
         {card.live && card.repo && <span className="px-3"></span>}
-        {card.repo && <a href={card.repo} target="_blank" rel='noreferrer' className="bg-black text-white py-2 px-4 hover:bg-gray-500 duration-200">Repo</a>}
+        {card.repo && (
+          <a
+            href={card.repo}
+            target="_blank"
+            rel="noreferrer"
+            className="text-white py-2 px-4 border-solid border-4 rounded-sm border-white hover:border-blue-800"
+            style={{
+              backgroundColor: `${colors[Math.floor(Math.random() * 5)]}`,
+            }}
+          >
+            Repo
+          </a>
+        )}
       </div>
     </div>
   );
