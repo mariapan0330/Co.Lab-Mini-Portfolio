@@ -11,9 +11,11 @@ type ProjectCardDetails = {
 
 interface ProjectCardProps {
   card: ProjectCardDetails;
+  nextCard: Function;
 }
 
 export const Projects: React.FC = () => {
+  const isPhone = useMediaQuery({ query: "(max-width: 1000px)" });
   const [currentCard, setCurrentCard] = useState<number>(0);
   let cards: ProjectCardDetails[] = [
     {
@@ -72,9 +74,23 @@ export const Projects: React.FC = () => {
   };
 
   return (
-    <div className="h-content md:h-[40rem] pb-10 mx-2 relative">
+    <div className="h-content md:h-content pb-10 mx-2 relative">
       <div className="text-3xl font-bold md:text-5xl">Projects</div>
-      <div className="select-none flex justify-center mt-20 cursor-pointer text-3xl font-bold">
+      <div className="md:flex justify-center select-none">
+        {isPhone ? (
+          <ProjectCardSmall card={cards[currentCard]} nextCard={nextCard}/>
+        ) : (
+          <ProjectCardLarge card={cards[currentCard]} nextCard={nextCard} />
+        )}
+      </div>
+    </div>
+  );
+};
+
+const ProjectCardSmall: React.FC<ProjectCardProps> = ({ card, nextCard }) => {
+  return (
+    <div>
+      <div className="text-theme-dark-blue select-none flex justify-center mt-10 cursor-pointer text-3xl font-bold">
         <span
           onClick={() => nextCard("backward")}
           className="mx-16"
@@ -84,25 +100,8 @@ export const Projects: React.FC = () => {
           className="mx-16"
         >{`>>>`}</span>
       </div>
-      <div className="md:flex md:flex-wrap justify-center select-none">
-        <ProjectCard card={cards[currentCard]} />
-      </div>
-    </div>
-  );
-};
-
-const ProjectCard: React.FC<ProjectCardProps> = ({ card }) => {
-  const [showCard, setShowCard] = useState(true);
-  const isPhone = useMediaQuery({ query: "(max-width: 1000px)" });
-  let colors = ["#FFB2E0", "#72CDAA", "#4959FE", "#61BDFD", "#FECC38"];
-
-  return (
-    <div className={`${showCard ? "flex" : "hidden"}`}>
       <div
-        className={`md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 flex flex-col m-auto my-3 md:m-0 bg-white p-4 w-80 min-h-[470px] max-h-full shadow-md transition-all duration-500`}
-        onClick={() => {
-          !isPhone && setShowCard((prev) => !prev);
-        }}
+        className={`flex flex-col bg-white p-4 w-content min-h-[470px] max-h-full shadow-md transition-all duration-500`}
       >
         <img
           src={require(`../assets/projects/${card.image}.png`)}
@@ -116,10 +115,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ card }) => {
               href={card.live}
               target="_blank"
               rel="noreferrer"
-              className="text-white py-2 px-4 border-solid border-4 rounded-sm border-white hover:border-blue-800"
-              style={{
-                backgroundColor: `${colors[Math.floor(Math.random() * 5)]}`,
-              }}
+              className="text-white py-2 px-4 bg-theme-light-blue rounded-sm hover:bg-theme-yellow"
             >
               Live
             </a>
@@ -130,15 +126,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ card }) => {
               href={card.repo}
               target="_blank"
               rel="noreferrer"
-              className="text-white py-2 px-4 border-solid border-4 rounded-sm border-white hover:border-blue-800"
-              style={{
-                backgroundColor: `${colors[Math.floor(Math.random() * 5)]}`,
-              }}
+              className="text-white py-2 px-4 bg-theme-dark-blue rounded-sm hover:bg-theme-green"
             >
               Repo
             </a>
           )}
         </div>
+      </div>
+    </div>
+  );
+};
+
+const ProjectCardLarge: React.FC<ProjectCardProps> = ({ card }) => {
+  return (
+    <div>
+      <div
+        className={`flex flex-col bg-white w-[70rem] min-h-[470px] max-h-full shadow-md transition-all duration-500`}
+      >
+        <img
+          src={require(`../assets/projects/${card.image}.png`)}
+          alt={card.title}
+        />
+        <div className="flex-none text-xl font-bold py-4">{card.title}</div>
+        <div className="flex-row grow text-md">{card.description}</div>
       </div>
     </div>
   );
