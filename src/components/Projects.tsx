@@ -10,11 +10,7 @@ type ProjectCardDetails = {
 };
 
 interface ProjectCardProps {
-  cards?: ProjectCardDetails[];
   card: ProjectCardDetails;
-  position?: number;
-  z?: number;
-  i?: number;
 }
 
 export const Projects: React.FC = () => {
@@ -72,11 +68,11 @@ export const Projects: React.FC = () => {
 
   const nextCard = (direction: string) => {
     direction === "forward" && setCurrentCard((prev) => (prev + 1) % 6);
-    direction === "backward" && setCurrentCard((prev) => (prev - 1+6) % 6);
+    direction === "backward" && setCurrentCard((prev) => (prev - 1 + 6) % 6);
   };
 
   return (
-    <div className="h-content md:h-[50rem] w-full pb-40 mx-2 relative">
+    <div className="h-content md:h-[50rem] pb-40 mx-2 relative">
       <div className="text-3xl font-bold md:text-5xl">Projects</div>
       <div className="select-none flex justify-center mt-20 cursor-pointer text-3xl font-bold">
         <span
@@ -88,27 +84,14 @@ export const Projects: React.FC = () => {
           className="mx-16"
         >{`>>>`}</span>
       </div>
-      <div className="md:flex md:flex-wrap justify-center">
-        {/* {cards.map((card, i) => ( */}
-        <div className="select-none">
-          {/* <div key={`project-card-${i}`} className="select-none"> */}
-          <ProjectCard
-            // cards={cards}
-            card={cards[currentCard]}
-            // position={i * 12}
-            // z={(10 - i) * 10}
-            // i={i}
-          />
-        </div>
-        {/* ))} */}
+      <div className="md:flex md:flex-wrap justify-center select-none">
+        <ProjectCard card={cards[currentCard]} />
       </div>
     </div>
   );
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ cards, card, i }) => {
-  // TRY NPM'S REACT-STACK-CARDS (https://www.npmjs.com/package/@webileapps/react-stack-cards)
-  // DEMO: https://yoloten.github.io/react-stack-cards/
+const ProjectCard: React.FC<ProjectCardProps> = ({ card }) => {
   const [showCard, setShowCard] = useState(true);
   const isPhone = useMediaQuery({ query: "(max-width: 1000px)" });
   let colors = ["#FFB2E0", "#72CDAA", "#4959FE", "#61BDFD", "#FECC38"];
