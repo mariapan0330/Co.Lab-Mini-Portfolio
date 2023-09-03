@@ -30,14 +30,14 @@ export const TechStack: React.FC = () => {
     {name:"VS Code", color:700},
   ];
   return (
-      <div className=" mb-60 flex flex-col items-center">
+      <div className="mb-28 md:mb-48 flex flex-col items-center">
         <div className="text-5xl font-bold md:text-7xl">Tech Stack</div>
         <div className="pt-10 flex flex-wrap justify-center items-center w-4/5">
           {stack.map((item, i) => (
             <img
               key={`stack-${i}`}
               src={require(`../assets/tech stack/${item.name.toLowerCase()}.png`)}
-              className={`h-20 p-3 md:h-36 md:p-6 rounded-lg duration-200 bg-gradient-to-t hover:from-amber-300/50 hover:to-pink-100`}
+              className={`h-20 p-3 md:h-36 md:p-6 rounded-lg duration-200 bg-gradient-to-t hover:from-pink-300/50 hover:to-pink-100/50`}
               alt={item.name}
             />
           ))}

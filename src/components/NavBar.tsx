@@ -18,7 +18,7 @@ export const NavBar: React.FC = () => {
   ];
 
   return (
-    <div className="h-20 bg-white drop-shadow-xl sticky top-0 z-auto px-0 md:px-3 lg:px-40">
+    <div className="h-20 bg-white drop-shadow-xl sticky top-0 z-50 px-0 md:px-3 lg:px-40">
       <div className="flex">
         {/* ITEM 1 & 2: LOGO & TITLE */}
         <HashLink
