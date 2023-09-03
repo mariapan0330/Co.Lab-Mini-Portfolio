@@ -114,7 +114,7 @@ export const Experience: React.FC = () => {
 
   return (
     // this is all part of the bio section
-    <div className="h-content md:mx-20 lg:mx-80 pb-40 " id="experience">
+    <div className="h-content md:mx-20 lg:mx-80 pb-28 " id="experience">
       <div className="text-3xl font-bold md:text-5xl">
         Education & Experience
       </div>

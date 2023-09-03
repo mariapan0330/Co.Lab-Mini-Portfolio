@@ -19,8 +19,16 @@ export const Projects: React.FC = () => {
   const [currentCard, setCurrentCard] = useState<number>(0);
   let cards: ProjectCardDetails[] = [
     {
+      image: "dance off",
+      title: "Multiplayer Dance Party Game",
+      live: "",
+      description:
+        "This is a mulitplayer game made using RuneSDK for Rune's Game Jam 2023 in collaboration with a small team!",
+      repo: "https://github.com/JackCasica/rune-dance-party",
+    },
+    {
       image: "personal website",
-      title: "This site!",
+      title: "Portfolio Site",
       live: "https://maria-panagos.netlify.app/",
       description:
         "A handmade portfolio site detailing my projects and experience! Includes a working contact form that emails me when someone submits something.",
@@ -78,7 +86,7 @@ export const Projects: React.FC = () => {
       <div className="text-3xl font-bold md:text-5xl">Projects</div>
       <div className="md:flex justify-center select-none">
         {isPhone ? (
-          <ProjectCardSmall card={cards[currentCard]} nextCard={nextCard}/>
+          <ProjectCardSmall card={cards[currentCard]} nextCard={nextCard} />
         ) : (
           <ProjectCardLarge card={cards[currentCard]} nextCard={nextCard} />
         )}
@@ -90,7 +98,7 @@ export const Projects: React.FC = () => {
 const ProjectCardSmall: React.FC<ProjectCardProps> = ({ card, nextCard }) => {
   return (
     <div>
-      <div className="text-theme-dark-blue select-none flex justify-center mt-10 cursor-pointer text-3xl font-bold">
+      <div className="bg-theme-green text-white rounded-sm select-none flex justify-center mt-10 cursor-pointer text-3xl font-bold">
         <span
           onClick={() => nextCard("backward")}
           className="mx-16"
@@ -137,19 +145,58 @@ const ProjectCardSmall: React.FC<ProjectCardProps> = ({ card, nextCard }) => {
   );
 };
 
-const ProjectCardLarge: React.FC<ProjectCardProps> = ({ card }) => {
+const ProjectCardLarge: React.FC<ProjectCardProps> = ({ card, nextCard }) => {
   return (
-    <div>
+    <div className="flex justify-content items-center">
+      <span
+        onClick={() => nextCard("backward")}
+        className="px-10 mx-4 bg-theme-light-blue shadow-lg hover:bg-theme-pink rounded-sm h-1/2 flex items-center cursor-pointer"
+      >{`<<<`}</span>
       <div
-        className={`flex flex-col bg-white w-[70rem] min-h-[470px] max-h-full shadow-md transition-all duration-500`}
+        className={`flex flex-col rounded-md mt-10 bg-white w-[65rem] min-h-[470px] max-h-full shadow-md transition-all duration-500`}
       >
         <img
           src={require(`../assets/projects/${card.image}.png`)}
           alt={card.title}
+          className="rounded-t-md"
         />
-        <div className="flex-none text-xl font-bold py-4">{card.title}</div>
-        <div className="flex-row grow text-md">{card.description}</div>
+        <div className="flex justify-center items-center">
+          <div className="flex-1">
+            <div className="flex-none text-xl font-bold py-4 px-20 text-left">
+              {card.title}
+            </div>
+            <div className="grow text-md pb-8 px-20 text-left">
+              {card.description}
+            </div>
+          </div>
+
+          {/* SOME CARDS DON'T HAVE LIVE LINKS. IF THEY DO, RENDER IT NEXT TO REPO LINK (all have repos): */}
+          {card.live && (
+            <a
+              href={card.live}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center bg-black text-white px-10 py-4 h-1/2 mr-20 hover:bg-gray-500 duration-200"
+            >
+              Live
+            </a>
+          )}
+          {card.repo && (
+            <a
+              href={card.repo}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center bg-black text-white px-10 py-4 h-1/2 mr-20 hover:bg-gray-500 duration-200"
+            >
+              Repo
+            </a>
+          )}
+        </div>
       </div>
+      <span
+        onClick={() => nextCard("forward")}
+        className="px-10 mx-4 bg-theme-green shadow-lg hover:bg-theme-pink rounded-sm h-1/2 flex items-center cursor-pointer"
+      >{`>>>`}</span>
     </div>
   );
 };
