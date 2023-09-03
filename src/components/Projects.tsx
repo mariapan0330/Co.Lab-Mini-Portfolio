@@ -72,7 +72,7 @@ export const Projects: React.FC = () => {
   };
 
   return (
-    <div className="h-content md:h-[50rem] pb-40 mx-2 relative">
+    <div className="h-content md:h-[40rem] pb-10 mx-2 relative">
       <div className="text-3xl font-bold md:text-5xl">Projects</div>
       <div className="select-none flex justify-center mt-20 cursor-pointer text-3xl font-bold">
         <span
