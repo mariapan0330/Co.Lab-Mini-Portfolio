@@ -8,7 +8,8 @@ export const Landing: React.FC = () => {
       <div className="text-xl md:text-2xl font-bold text-white">
         <a target="_blank" rel='noreferrer' href={require("../assets/Maria Panagos Resume for CoLab.pdf")} className="w-30 h-16 lg:w-48 lg:h-20 bg-black px-10 py-3 flex items-center justify-center">Resume</a>
       </div>
-      <img src={require('../assets/landing_images.png')} alt="My hobbies and me" className="hidden md:flex md:w-fit lg:h-1/5 my-20" />
+      <img src={require('../assets/landing_images.png')} alt="My hobbies and me" className="hidden md:flex md:w-fit lg:h-1/5 my-20" id="landingImage" />
+    <div id="bio"/>
     </div>
   );
 };

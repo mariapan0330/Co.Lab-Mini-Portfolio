@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import { HashLink } from "react-router-hash-link";
 
 type LinksInfo = {
@@ -7,13 +8,14 @@ type LinksInfo = {
 };
 
 export const NavBar: React.FC = () => {
+  const isPhone = useMediaQuery({ query: "(max-width: 1000px)"})
+  let [open, setOpen] = useState(false);
+
   let links: LinksInfo[] = [
     { name: "Bio", link: "#bio" },
     { name: "Projects", link: "#projects" },
     { name: "Fancy a Riddle?", link: "#riddle" },
   ];
-
-  let [open, setOpen] = useState(false);
 
   return (
     <div className="h-20 bg-white drop-shadow-xl sticky top-0 z-auto px-0 md:px-3 lg:px-40">
@@ -32,23 +34,23 @@ export const NavBar: React.FC = () => {
         </HashLink>
 
         {/* SMALL SCREENS: menu button */}
-        <div
+        {isPhone && <div
           onClick={() => setOpen((prev) => !prev)}
           className="text-3xl absolute right-8 top-5 md:hidden"
         >
           <img src={require("../assets/Menu Btn.png")} className="w-8" alt="" />
-        </div>
+        </div>}
 
         {/* ITEMS 3,4,5: Bio, Projects, Riddle */}
         <ul
-          className={`z-[-1] w-full absolute md:static md:flex md:items-center md:justify-evenly transition-all duration-200 ease-in ${
-            open ? "top-20" : "top-[-295px]"
+          className={`z-10 w-full absolute md:static md:flex md:items-center md:justify-evenly transition-all duration-200 ease-in ${
+            open ? "top-20" : "top-[-300px]"
           }`}
         >
           {links.map((link, i) => (
             <li
               key={`navlink-${i}`}
-              className="text-xl h-20 pt-5 bg-gray-800 text-white md:text-black md:bg-white"
+              className="z-0 text-xl h-20 pt-5 bg-gray-800 text-white md:text-black md:bg-white"
             >
               <HashLink
                 to={link.link}
