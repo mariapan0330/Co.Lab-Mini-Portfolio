@@ -4,6 +4,7 @@ type XPCard = {
   role: string;
   company: string;
   dates: string;
+  color: string;
   description?: string;
 };
 
@@ -13,38 +14,43 @@ export const Experience: React.FC = () => {
       role: "Code Coach",
       company: "theCoderSchool Nortshore",
       dates: "January 2023 - Present",
+      color: "FEF7CD"
     },
     {
       role: "Small Business Owner",
       company: "LittleBirdBigIdeas",
       dates: "July 2021 - Present",
+      color: "FFEBD0"
     },
     {
       role: "Software Developer",
       company: "Coding Temple",
       dates: "July 2022 - September 2022",
+      color: "FDD7C4"
     },
     {
       role: "Public Relations Officer",
       company: "Q Soc",
       dates: "December 2019 - May 2021",
+      color: "FFD2CC"
     },
     {
       role: "Bachelor of Arts",
       company: "Trinity College Dublin",
       dates: "August 2018 - May 2022",
+      color: "FEC8BE"
     },
   ];
 
   return (
     // this is all part of the bio section
-    <div className="h-content md:mx-60 pb-20 " id="experience">
+    <div className="h-content md:mx-20 lg:mx-80 pb-20 " id="experience">
       <div className="text-5xl font-bold md:text-7xl">
         Education & Experience
       </div>
       <div className="pt-8 md:pt-12 flex flex-col md:flex-row md:flex-wrap justify-evenly">
         {xpcards.map((item, i) => (
-          <div className="bg-rose-200/60 mix-blend-multiply p-10 m-4 shadow-lg rounded-xl">
+          <div className="p-10 m-4 shadow-lg rounded-xl" style={{'backgroundColor':`#${item.color}`}}>
             <div className="text-2xl font-bold">{item.role}</div>
             <hr className="my-2 border-rose-300" />
             <div className="text-xl">{item.company}</div>
