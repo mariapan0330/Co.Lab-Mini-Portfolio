@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 
 type ProjectCard = {
   image?: string;
@@ -10,6 +11,9 @@ type ProjectCard = {
 
 interface ProjectCardProps {
   card: ProjectCard;
+  position: number;
+  z: number;
+  i: number;
 }
 
 export const Projects: React.FC = () => {
@@ -64,12 +68,17 @@ export const Projects: React.FC = () => {
     },
   ];
   return (
-    <div className="h-content pb-40 mx-2 md:mx-80">
+    <div className="h-content md:h-[50rem] pb-40 mx-2 md:mx-80 relative">
       <div className="text-3xl font-bold md:text-5xl">Projects</div>
-      <div className="md:flex md:flex-wrap justify-center mt-20">
+      <div className="md:flex md:flex-wrap mt-20">
         {cards.map((card, i) => (
-          <div key={`project-card-${i}`}>
-            <ProjectCard card={card} />
+          <div key={`project-card-${i}`} className="select-none">
+            <ProjectCard
+              card={card}
+              position={i * 12}
+              z={(10 - i) * 10}
+              i={i}
+            />
           </div>
         ))}
       </div>
@@ -77,11 +86,28 @@ export const Projects: React.FC = () => {
   );
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ card }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  card,
+  position,
+  z,
+  i,
+}) => {
+  const [clicked, setClicked] = useState(true);
+  const isPhone = useMediaQuery({ query: "(max-width: 1000px)" });
   let colors = ["#FFB2E0", "#72CDAA", "#4959FE", "#61BDFD", "#FECC38"];
   return (
-    <div className="flex flex-col bg-white p-4 m-4 w-80 min-h-[470px] max-h-full shadow-md ">
-        <img src={require(`../assets/projects/${card.image}.png`)} alt={card.title} />
+    <div
+      className={`z-${z} ${
+        !isPhone && `absolute ${clicked ? "right" : "left"}-${position}`
+      } flex flex-col bg-white p-4 m-4 w-80 min-h-[470px] max-h-full shadow-md transition-all duration-500`}
+      onClick={() => {
+        !isPhone && setClicked((prev) => !prev);
+      }}
+    >
+      <img
+        src={require(`../assets/projects/${card.image}.png`)}
+        alt={card.title}
+      />
       <div className="flex-none text-xl font-bold py-4">{card.title}</div>
       <div className="flex-row grow text-md">{card.description}</div>
       <div className="flex-none links my-6 font-bold">
