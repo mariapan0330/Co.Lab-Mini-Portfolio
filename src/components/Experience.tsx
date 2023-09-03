@@ -5,7 +5,7 @@ type XPCardItem = {
   company: string;
   dates: string;
   color: string;
-  description?: React.JSX.Element;
+  description: React.JSX.Element;
 };
 
 interface XPCardProps {
@@ -143,7 +143,9 @@ const XPCard: React.FC<XPCardProps> = ({ item }) => {
   return (
     <div>
       <div
-        className={`p-10 m-4 shadow-lg rounded-xl ${showDescription && 'mx-[300px]'} cursor-pointer`}
+        className={`p-10 m-4 shadow-lg rounded-xl ${
+          showDescription && "mx-[300px]"
+        } cursor-pointer`}
         style={{ backgroundColor: `#${item.color}` }}
         onClick={() => setShowDescription((prev) => !prev)}
       >
@@ -151,7 +153,12 @@ const XPCard: React.FC<XPCardProps> = ({ item }) => {
         <hr className="my-2 border-rose-300" />
         <div className="text-xl">{item.company}</div>
         <div className="text-rose-800 italic">{item.dates}</div>
-        <div className={`${showDescription ? 'flex' : 'hidden'}`}>{item.description}</div>
+        <div className={`text-left ${showDescription ? "flex" : "hidden"}`}>
+          {item.description}
+        </div>
+        <div className=" text-md text-rose-800/50 py-2 flex items-center justify-center italic">
+          {showDescription ? 'Read less...' : 'Read more...'}
+        </div>
       </div>
     </div>
   );
