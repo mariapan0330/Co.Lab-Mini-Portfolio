@@ -32,8 +32,7 @@ export const Experience: React.FC = () => {
           CodeCombat, and visual libraries like Python’s Pygame and JavaScript’s
           colors module so students can engage with the fun and logic of coding
           without too much overhead.
-          <br />
-          - Earned Employee Spotlight of the Month for April 2023 in
+          <br />- Earned Employee Spotlight of the Month for April 2023 in
           recognition of my diligence, rapport, and effective teaching.
         </>
       ),
@@ -50,8 +49,7 @@ export const Experience: React.FC = () => {
           <br />
           - Modified products and sales in advance of holidays and popular
           culture events to prepare for changes in consumer interests.
-          <br />
-          - Resolved questions and concerns and handled commissions to
+          <br />- Resolved questions and concerns and handled commissions to
           achieve a seamless, friendly customer experience.
         </>
       ),
@@ -71,8 +69,7 @@ export const Experience: React.FC = () => {
           intuitive UI that ensured a seamless experience for users creating a
           new profile, viewing other users’ profiles and creating, editing, and
           deleting their own posts.
-          <br />
-          - Crafted and hosted a weather application, connecting a public
+          <br />- Crafted and hosted a weather application, connecting a public
           weather API and using Flask’s Jinja Templating to achieve an elegant
           UI with effective search functionality. Hosted this project on Heroku
           and later migrated it to Netlify.
@@ -91,8 +88,7 @@ export const Experience: React.FC = () => {
           <br />
           - Streamlined the recruitment of over 300 members, promoted 3 large
           events a week, and emailed members weekly.
-          <br />
-          - Managed a team working across 7 time zones dedicated to the
+          <br />- Managed a team working across 7 time zones dedicated to the
           production of the society’s magazine.
         </>
       ),
@@ -109,8 +105,7 @@ export const Experience: React.FC = () => {
           - Gained experience in data analysis using Python's NumPy, Pandas, and
           Matplotlib, as well as IBM's SPSS, analyzing large data sets as a part
           of various research projects.
-          <br />
-          - Developed soft skills including effective written and verbal
+          <br />- Developed soft skills including effective written and verbal
           communication, critical thinking, and networking.
         </>
       ),
@@ -125,7 +120,9 @@ export const Experience: React.FC = () => {
       </div>
       <div className="pt-8 md:pt-12 flex flex-col md:flex-row md:flex-wrap justify-evenly">
         {xpcards.map((item, i) => (
-          <XPCard item={item} />
+          <div key={`xp-card-${i}`}>
+            <XPCard item={item} />
+          </div>
         ))}
       </div>
       <div id="projects" />
@@ -147,8 +144,14 @@ const XPCard: React.FC<XPCardProps> = ({ item }) => {
         <div className="text-xl md:text-2xl font-bold">{item.role}</div>
         <hr className="md:my-2 border-rose-300" />
         <div className="text-lg md:text-xl">{item.company}</div>
-        <div className="text-sm md:text-lg text-rose-800 italic">{item.dates}</div>
-        <div className={`text-xs md:text-lg leading-5 text-left py-2 ${showDescription ? "flex" : "hidden"}`}>
+        <div className="text-sm md:text-lg text-rose-800 italic">
+          {item.dates}
+        </div>
+        <div
+          className={`text-xs md:text-lg leading-5 text-left py-2 ${
+            showDescription ? "flex" : "hidden"
+          }`}
+        >
           {item.description}
         </div>
         <div className="text-sm md:text-md text-rose-800/50 md:py-2 flex items-center justify-center italic">
