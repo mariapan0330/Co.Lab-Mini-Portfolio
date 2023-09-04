@@ -153,7 +153,7 @@ const ProjectCardLarge: React.FC<ProjectCardProps> = ({ card, nextCard }) => {
         className="px-10 mx-4 bg-theme-light-blue shadow-lg hover:bg-theme-pink rounded-sm h-1/2 flex items-center cursor-pointer"
       >{`<<<`}</span>
       <div
-        className={`flex flex-col rounded-md mt-10 bg-white w-[65rem] min-h-[470px] max-h-full shadow-md transition-all duration-500`}
+        className={`flex flex-col rounded-md mt-10 bg-white w-[50rem] max-w-fit max-h-full shadow-md transition-all duration-500`}
       >
         <img
           src={require(`../assets/projects/${card.image}.png`)}

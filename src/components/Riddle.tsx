@@ -54,12 +54,12 @@ export const Riddle: React.FC = () => {
   return (
     <>
       <div id="riddle" className="pb-36"></div>
-      <div className="h-content pb-10 md:mx-80">
+      <div className="h-content pb-10 md:pb-36 mx-10 md:mx-20 lg:mx-80 flex flex-col items-center">
         {/*========== TITLE AND SUBTITLE ==========*/}
         <div className="mt-0 text-3xl font-bold md:text-5xl">
           Fancy a Riddle?
         </div>
-        <div className="text-lg md:text-xl py-10 md:mx-80">
+        <div className="text-lg md:text-xl py-10 md:w-4/5 lg:w-1/2">
           I'm a huge fan of puzzle games, particularly lateral thinking puzzles!
           Here's something that comes close - a randomly generated riddle from
           the{" "}
@@ -77,7 +77,7 @@ export const Riddle: React.FC = () => {
 
         {/*========== RENDER RIDDLE ==========*/}
         <div className="flex flex-col m-4 md:m-0">
-          <div className="bg-white h-content shadow-lg p-10 md:px-36 text-start">
+          <div className="bg-white h-content shadow-lg p-10 lg:px-16 text-start">
             <div className="flex flex-col md:flex-row justify-center items-center">
               <div className="md:flex-1">
                 <div className="font-bold text-lg">{riddle.title}</div>
@@ -106,7 +106,7 @@ export const Riddle: React.FC = () => {
             >
               {showAnswer ? (
                 // IF YOU HAVE REVEALED THE ANSWER:
-                <div className="p-10 md:px-20 flex flex-col text-start justify-start">
+                <div className="p-10 md:px-16 flex flex-col text-start justify-start">
                   <div className="font-bold text-lg">Answer</div>
                   <div className="leading-6 text-md">{riddle.answer}</div>
                 </div>
@@ -125,7 +125,7 @@ export const Riddle: React.FC = () => {
 
             {/*========== YOUR ANSWER ==========*/}
             <div className="flex-1 mt-4 md:mt-0 md:ml-5 bg-white h-content shadow-lg">
-              <div className="p-10 md:px-20 flex flex-col text-start justify-start">
+              <div className="p-10 md:px-16 flex flex-col text-start justify-start">
                 <div className="font-bold text-lg">
                   Your Answer{" "}
                   <span className="text-base font-normal">

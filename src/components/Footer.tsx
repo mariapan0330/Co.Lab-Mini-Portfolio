@@ -37,7 +37,7 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row shrink-0 bottom-0 left-0 w-full h-[300px] bg-black text-white md:px-80">
+    <div className="flex flex-col md:flex-row shrink-0 bottom-0 left-0 w-full h-[350px] md:h-[300px] bg-black text-white md:px-10 lg:px-80">
       {/* ========== COLUMN 1: LINKS TO MY GITHUB, LINKEDIN, EMAIL ========== */}
       <div className="md:flex-1 my-5 md:my-0 justify-center self-center">
         {links.map((item, i) =>
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               title={item.hoverTitle}
-              className="md:w-1/2 text-lg py-2 md:py-4 flex items-center rounded-sm hover:bg-gray-800 duration-200"
+              className="lg:w-1/2 text-lg py-2 md:py-4 flex items-center rounded-sm hover:bg-gray-800 duration-200"
             >
               <img
                 src={require(`../assets/contact images/${item.image}.png`)}
@@ -61,7 +61,7 @@ export const Footer: React.FC = () => {
             <div
               key={`contact-links-${i}`}
               title={item.hoverTitle}
-              className="md:w-1/2 text-lg py-2 md:py-4 flex items-center rounded-sm hover:bg-gray-800 duration-200 cursor-pointer active:bg-theme-green"
+              className="lg:w-1/2 text-lg py-2 md:py-4 flex flex-wrap items-center rounded-sm hover:bg-gray-800 duration-200 cursor-pointer active:bg-theme-green"
               onClick={() => {
                 copyToClipboard();
               }}
@@ -84,7 +84,7 @@ export const Footer: React.FC = () => {
 
       {/* ========== COLUMN 2: LINK TO REPO FOR THIS PROJECT ========== */}
       <div className="flex flex-col justify-center items-center">
-        <div className="flex text-3xl font-bold">
+        <div className="flex text-3xl font-bold text-center">
           Want to see how I made this site?
         </div>
         <a
