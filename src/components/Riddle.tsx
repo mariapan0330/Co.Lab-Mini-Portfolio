@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { API_KEY } from "./env.js";
 
 type RiddleObj = {
   title: string;
@@ -30,7 +29,7 @@ export const Riddle: React.FC = () => {
 
   const fetchNewRiddle = () => {
     const apiURL = "https://api.api-ninjas.com/v1/riddles";
-    const apiKey = API_KEY;
+    const apiKey = process.env.API_KEY as string;
 
     fetch(apiURL, {
       headers: {
