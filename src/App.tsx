@@ -11,7 +11,7 @@ import { Riddle } from './components/Riddle';
 function App() {
   return (
     <>
-    <div className="App bg-cover">
+    <div className="App bg-cover font-[Poppins]">
       <NavBar />
       <Landing />
       <TechStack />

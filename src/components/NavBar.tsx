@@ -23,7 +23,7 @@ export const NavBar: React.FC = () => {
         {/* ITEM 1 & 2: LOGO & TITLE */}
         <HashLink
           to="#top"
-          className="text-xl md:text-3xl font-bold flex items-center w-full py-4 md:pb-2 md:pt-0"
+          className="text-xl md:text-3xl font-bold font-[Poppins] flex items-center w-full py-4 md:pb-2 md:pt-0"
         >
           <img
             src={require("../assets/m icon.png")}
@@ -69,7 +69,7 @@ export const NavBar: React.FC = () => {
               href={require("../assets/Maria Panagos Resume for CoLab.pdf")}
               className="bg-black hover:bg-gray-500 duration-200 px-10 py-3 flex items-center justify-center font-bold"
             >
-              Résumé
+              View Résumé
             </a>
           </div>
         </ul>

@@ -102,11 +102,11 @@ const ProjectCardSmall: React.FC<ProjectCardProps> = ({ card, nextCard }) => {
         <span
           onClick={() => nextCard("backward")}
           className="mx-16"
-        >{`<<<`}</span>
+        >{`<`}</span>
         <span
           onClick={() => nextCard("forward")}
           className="mx-16"
-        >{`>>>`}</span>
+        >{`>`}</span>
       </div>
       <div
         className={`flex flex-col bg-white p-4 w-content min-h-[470px] max-h-full shadow-md transition-all duration-500`}
@@ -150,8 +150,8 @@ const ProjectCardLarge: React.FC<ProjectCardProps> = ({ card, nextCard }) => {
     <div className="flex justify-content items-center">
       <span
         onClick={() => nextCard("backward")}
-        className="px-10 mx-4 bg-theme-light-blue shadow-lg hover:bg-theme-pink rounded-sm h-1/2 flex items-center cursor-pointer"
-      >{`<<<`}</span>
+        className="text-7xl font-bold px-8 mx-4 bg-theme-light-blue shadow-lg hover:bg-theme-pink rounded-sm h-1/2 flex items-center cursor-pointer"
+      >{`<`}</span>
       <div
         className={`flex flex-col rounded-md mt-10 bg-white w-[50rem] max-w-fit max-h-full shadow-md transition-all duration-500`}
       >
@@ -195,8 +195,8 @@ const ProjectCardLarge: React.FC<ProjectCardProps> = ({ card, nextCard }) => {
       </div>
       <span
         onClick={() => nextCard("forward")}
-        className="px-10 mx-4 bg-theme-green shadow-lg hover:bg-theme-pink rounded-sm h-1/2 flex items-center cursor-pointer"
-      >{`>>>`}</span>
+        className="text-7xl font-bold px-8 mx-4 bg-theme-green shadow-lg hover:bg-theme-pink rounded-sm h-1/2 flex items-center cursor-pointer"
+      >{`>`}</span>
     </div>
   );
 };

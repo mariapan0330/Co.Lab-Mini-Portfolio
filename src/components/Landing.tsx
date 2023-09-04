@@ -3,7 +3,7 @@ import React from "react";
 export const Landing: React.FC = () => {
   return (
     <div className="h-screen mx-auto flex flex-col justify-center items-center px-10 md:px-20" id="landing">
-      <div className="text-5xl font-bold md:text-7xl">Results-driven full stack developer</div>
+      <div className="text-5xl md:text-7xl font-[Poppins] font-bold">Results-driven full stack developer</div>
       <div className="text-lg md:text-2xl py-10">with a strong foundation in psychology and statistics, transitioning into the field of software development</div>
 
       <div className="text-xl md:text-2xl font-bold text-white">
