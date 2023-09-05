@@ -31,7 +31,7 @@ export const TechStack: React.FC = () => {
   ];
   return (
       <div className="mb-28 md:mb-48 flex flex-col items-center">
-        <div className="text-3xl font-bold md:text-5xl">Tech Stack</div>
+        <div className="z-10 text-3xl font-bold md:text-5xl">Tech Stack</div>
         <div className="pt-10 flex flex-wrap justify-center items-center w-4/5">
           {stack.map((item, i) => (
             <img
